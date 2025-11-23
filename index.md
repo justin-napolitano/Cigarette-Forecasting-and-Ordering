@@ -3,75 +3,62 @@ slug: "github-cigarette-forecasting-and-ordering"
 title: "Cigarette-Forecasting-and-Ordering"
 repo: "justin-napolitano/Cigarette-Forecasting-and-Ordering"
 githubUrl: "https://github.com/justin-napolitano/Cigarette-Forecasting-and-Ordering"
-generatedAt: "2025-11-23T08:26:10.646958Z"
+generatedAt: "2025-11-23T08:42:34.624196Z"
 source: "github-auto"
 ---
 
 
 # Cigarette-Forecasting-and-Ordering: Technical Overview
 
-This project addresses the operational need to forecast cigarette sales and automate ordering based on sales data. It leverages Python for data processing and barcode generation to streamline inventory management decisions.
+## Motivation and Problem Statement
 
-## Motivation
+The project addresses the need for efficient inventory management and demand forecasting in cigarette retail sales. Manual tracking of sales data and ordering can be error-prone and inefficient. This repository automates the process of analyzing sales data, forecasting demand based on historical sales, and generating order forms with barcode integration to streamline restocking.
 
-Retailers and distributors require accurate forecasting to maintain optimal inventory levels, minimizing stockouts and overstock. Cigarette sales can fluctuate weekly, making manual tracking inefficient and error-prone. This project automates the analysis of sales data to identify when products fall below expected sales thresholds, triggering restocking orders.
+## Project Components and Implementation
 
-## Problem Statement
+### Data Processing and Analysis
 
-Given raw sales data, the challenge is to:
+The core functionality resides in `cigarette_sales_order_form.py`. It reads sales data from a CSV file (`CigSales.csv`) into a pandas dataframe. The data includes fields such as date, quantity sold, store, cigarette name, and UPC codes.
 
-- Aggregate sales by product and store on a weekly basis.
-- Calculate average weekly sales to establish baseline demand.
-- Compare current sales against these averages to determine if reordering is necessary.
-- Generate order forms that include product barcodes for easy identification and processing.
+Key processing steps include:
 
-## Implementation Details
+- Converting date strings to datetime objects and setting them as the dataframe index.
+- Calculating `Total Cartons Sold` by multiplying quantity sold by sell unit quantity.
+- Extracting the week number from the timestamp to enable weekly aggregation.
+- Grouping data by week number, store, cigarette details, and sell unit quantity to aggregate sales.
+- Calculating average weekly sales per cigarette product.
+- Comparing current weekly sales against averages to flag products that require ordering.
 
-### Data Processing
+The logic for ordering is based on whether the current total cartons sold in a week exceed the average weekly sales and meet a minimum threshold (>=1 carton).
 
-The core script, `cigarette_sales_order_form.py`, reads sales data from a CSV file into a pandas DataFrame. Key steps include:
+### Output Generation
 
-- Parsing the `Date` column into datetime objects and setting it as the index.
-- Computing `Total Cartons Sold` by multiplying `Quantity Sold` by `Sell Unit Quantity`.
-- Extracting the week number from the timestamp to group sales data weekly.
-- Grouping data by week, store, cigarette name, UPC, item number, and sell unit quantity to aggregate sales.
-- Normalizing total cartons sold by dividing by 10 (likely a unit conversion).
-- Calculating the average cartons sold weekly per cigarette product.
-- Adding an `Order` boolean flag to indicate if sales exceed average demand, signaling a reorder.
-
-The logic for ordering is:
-
-```python
-Order = (Average Cartons Sold Weekly <= Total Cartons Sold) and (Total Cartons Sold >= 1)
-```
-
-This implies orders are placed when current sales meet or exceed average sales, with a minimum sales threshold.
+The processed data is prepared for export to Excel spreadsheets, which serve as order forms. These forms include barcode information for products that require ordering.
 
 ### Barcode Generation
 
-The `bar_code.py` script uses the `python-barcode` library to generate UPC barcodes:
-
-- A hardcoded UPC code string is used as input.
-- The barcode object is created and rendered in ASCII for console output.
-- The barcode is saved as an image file (`upc13`), facilitating inclusion in order forms or labels.
+The `bar_code.py` script uses the `python-barcode` library to generate barcode images from UPC codes. It demonstrates generating a UPC barcode from a hardcoded code, printing an ASCII representation, and saving the barcode as an image file.
 
 ### Assumptions and Limitations
 
-- The sales data CSV (`CigSales.csv`) is assumed to be formatted with columns including `Date`, `Quantity Sold`, `Sell Unit Quantity`, `Store`, `Cigarette Name`, `Cigarette UPC`, and `Item Number`.
-- The project currently lacks parameterization; file paths and thresholds are hardcoded.
-- There is no error handling or data validation implemented.
-- Output is limited to console prints and DataFrame manipulations; exporting to Excel is mentioned but not fully shown.
+- The sales data CSV file must be present in the repository root or the path updated accordingly.
+- The barcode generation script currently uses a hardcoded UPC; it can be extended to generate barcodes dynamically from sales data.
+- The order flagging logic is simple and may require refinement for edge cases or business rules.
+- The project lacks command-line interface and scheduling, which are noted as future improvements.
 
-## Practical Considerations
+## Technical Considerations
 
-For operational use, enhancements would include:
+- The use of pandas allows efficient data manipulation and aggregation.
+- Grouping by multiple indices supports granular analysis by store and product.
+- The weekly aggregation uses the deprecated `.dt.week` attribute; updating to `.dt.isocalendar().week` is recommended for future compatibility.
+- The barcode generation leverages a standard library but could benefit from error handling and batch processing.
 
-- Parameterizing input/output paths and thresholds via command-line arguments or configuration files.
-- Automating export of flagged orders into formatted Excel spreadsheets.
-- Batch processing of multiple UPC codes for barcode generation.
-- Integration with inventory or ERP systems for seamless order placement.
-- Adding logging and error handling for robustness.
+## Practical Usage
 
-## Summary
+To use the project, place the sales data CSV file in the root directory, install dependencies, and run the main analysis script. The output Excel files will indicate which products need ordering, facilitating inventory management. The barcode script can be run separately to generate barcode images for UPC codes.
 
-This project provides a foundational framework for cigarette sales forecasting and ordering automation. It demonstrates practical use of pandas for time-series aggregation and numpy for conditional flagging. Barcode generation is integrated to support downstream processing. While functional, the code requires further development to be production-ready, including configurability, error handling, and comprehensive output generation.
+## Future Directions
+
+Enhancements should focus on parameterizing file paths, adding CLI options, automating execution schedules, and improving reporting capabilities. Extending barcode generation to integrate directly with order forms and supporting multiple barcode standards would increase utility.
+
+This project serves as a foundational tool for cigarette sales forecasting and ordering automation, providing a basis for further development and integration into retail inventory workflows.
