@@ -65,8 +65,6 @@ python bar_code.py
 ## Future Work / Roadmap
 
 - Add command-line arguments for input/output file paths and parameters.
-- Implement automated scheduling for regular sales data processing.
-- Enhance order form generation with more detailed reporting.
-- Integrate with inventory management systems.
-- Expand barcode generation to batch process multiple products.
-- Add unit tests and validation for data processing steps.
+- Implement automated scheduling for regular data processing and order generation.
+- Enhance reporting features with more detailed analytics and visualization.
+- Improve barcode generation with error handling and support for multiple barcode formats.
