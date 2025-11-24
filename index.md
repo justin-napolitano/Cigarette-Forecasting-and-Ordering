@@ -22,6 +22,13 @@ seoSecondaryKeywords:
   - inventory management
   - data aggregation
 seoOptimized: true
+topicFamily: datascience
+topicFamilyConfidence: 0.95
+topicFamilyNotes: >-
+  The post focuses on data processing, analysis, sales forecasting, and generating outputs (order
+  forms, barcodes) based on aggregated sales data. This aligns best with the 'Datascience' family,
+  which includes ETL pipelines, data analysis, and scripts for economic data workflows, matching the
+  described content and usage of pandas for data manipulation.
 ---
 
 # Cigarette-Forecasting-and-Ordering: Technical Overview
@@ -78,4 +85,5 @@ To use the project, place the sales data CSV file in the root directory, install
 Enhancements should focus on parameterizing file paths, adding CLI options, automating execution schedules, and improving reporting capabilities. Extending barcode generation to integrate directly with order forms and supporting multiple barcode standards would increase utility.
 
 This project serves as a foundational tool for cigarette sales forecasting and ordering automation, providing a basis for further development and integration into retail inventory workflows.
+
 
