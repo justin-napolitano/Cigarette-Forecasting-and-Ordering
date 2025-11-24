@@ -1,12 +1,28 @@
 ---
-slug: "github-cigarette-forecasting-and-ordering"
-title: "Cigarette-Forecasting-and-Ordering"
-repo: "justin-napolitano/Cigarette-Forecasting-and-Ordering"
-githubUrl: "https://github.com/justin-napolitano/Cigarette-Forecasting-and-Ordering"
-generatedAt: "2025-11-23T08:42:34.624196Z"
-source: "github-auto"
+slug: github-cigarette-forecasting-and-ordering
+title: Automated Cigarette Sales Forecasting and Ordering with Barcode Generation
+repo: justin-napolitano/Cigarette-Forecasting-and-Ordering
+githubUrl: https://github.com/justin-napolitano/Cigarette-Forecasting-and-Ordering
+generatedAt: '2025-11-23T08:42:34.624196Z'
+source: github-auto
+summary: >-
+  Technical overview of a Python project that automates cigarette sales data analysis, weekly demand
+  forecasting, order form creation, and barcode generation.
+tags:
+  - python
+  - sales-forecasting
+  - inventory-management
+  - barcode-generation
+  - pandas
+  - retail-data
+seoPrimaryKeyword: cigarette sales forecasting
+seoSecondaryKeywords:
+  - order form generation
+  - barcode generation
+  - inventory management
+  - data aggregation
+seoOptimized: true
 ---
-
 
 # Cigarette-Forecasting-and-Ordering: Technical Overview
 
@@ -62,3 +78,4 @@ To use the project, place the sales data CSV file in the root directory, install
 Enhancements should focus on parameterizing file paths, adding CLI options, automating execution schedules, and improving reporting capabilities. Extending barcode generation to integrate directly with order forms and supporting multiple barcode standards would increase utility.
 
 This project serves as a foundational tool for cigarette sales forecasting and ordering automation, providing a basis for further development and integration into retail inventory workflows.
+
