@@ -1,20 +1,29 @@
 ---
 slug: github-cigarette-forecasting-and-ordering
 id: github-cigarette-forecasting-and-ordering
-title: Cigarette-Forecasting-and-Ordering
+title: Cigarette Sales Forecasting and Ordering Automation
 repo: justin-napolitano/Cigarette-Forecasting-and-Ordering
 githubUrl: https://github.com/justin-napolitano/Cigarette-Forecasting-and-Ordering
 generatedAt: '2025-11-24T21:34:11.312Z'
 source: github-auto
 summary: >-
-  This repository contains Python scripts designed to analyze cigarette sales
-  data, forecast demand, and generate order forms with barcode integration. The
-  project processes sales data to identify when products require restocking and
-  outputs order information in Excel format.
-tags: []
-seoPrimaryKeyword: ''
-seoSecondaryKeywords: []
-seoOptimized: false
+  This project analyzes cigarette sales data to forecast demand and generate
+  order forms with barcode integration.
+tags:
+  - python
+  - pandas
+  - data analysis
+  - barcode generation
+  - sales forecasting
+  - excel export
+seoPrimaryKeyword: cigarette sales forecasting
+seoSecondaryKeywords:
+  - demand forecasting
+  - order management
+  - python scripts
+  - data processing
+  - sales data analysis
+seoOptimized: true
 topicFamily: null
 topicFamilyConfidence: null
 kind: project
