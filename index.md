@@ -1,13 +1,13 @@
 ---
 slug: github-cigarette-forecasting-and-ordering
-title: Automated Cigarette Sales Forecasting and Ordering with Barcode Generation
+title: Cigarette Sales Forecasting and Ordering Automation
 repo: justin-napolitano/Cigarette-Forecasting-and-Ordering
 githubUrl: https://github.com/justin-napolitano/Cigarette-Forecasting-and-Ordering
 generatedAt: '2025-11-23T08:42:34.624196Z'
 source: github-auto
 summary: >-
-  Technical overview of a Python project that automates cigarette sales data analysis, weekly demand
-  forecasting, order form creation, and barcode generation.
+  Explore a Python project for automating cigarette inventory management through
+  sales data analysis and barcode generation.
 tags:
   - python
   - sales-forecasting
@@ -15,20 +15,27 @@ tags:
   - barcode-generation
   - pandas
   - retail-data
+  - barcode generation
+  - data analysis
+  - inventory management
 seoPrimaryKeyword: cigarette sales forecasting
 seoSecondaryKeywords:
-  - order form generation
-  - barcode generation
-  - inventory management
-  - data aggregation
+  - inventory management automation
+  - sales data analysis
+  - barcode integration
+  - python project
+  - demand forecasting
 seoOptimized: true
 topicFamily: datascience
 topicFamilyConfidence: 0.95
 topicFamilyNotes: >-
-  The post focuses on data processing, analysis, sales forecasting, and generating outputs (order
-  forms, barcodes) based on aggregated sales data. This aligns best with the 'Datascience' family,
-  which includes ETL pipelines, data analysis, and scripts for economic data workflows, matching the
-  described content and usage of pandas for data manipulation.
+  The post focuses on data processing, analysis, sales forecasting, and
+  generating outputs (order forms, barcodes) based on aggregated sales data.
+  This aligns best with the 'Datascience' family, which includes ETL pipelines,
+  data analysis, and scripts for economic data workflows, matching the described
+  content and usage of pandas for data manipulation.
+kind: project
+id: github-cigarette-forecasting-and-ordering
 ---
 
 # Cigarette-Forecasting-and-Ordering: Technical Overview
