@@ -7,8 +7,8 @@ githubUrl: https://github.com/justin-napolitano/Cigarette-Forecasting-and-Orderi
 generatedAt: '2025-11-24T21:34:11.312Z'
 source: github-auto
 summary: >-
-  Analyze cigarette sales data, forecast demand, and automate order forms with
-  barcode integration using Python scripts.
+  Analyze cigarette sales data, forecast demand, and automate order forms with barcode integration
+  using Python scripts.
 tags:
   - python
   - pandas
@@ -24,8 +24,8 @@ seoSecondaryKeywords:
   - barcode integration
   - CSV data handling
 seoOptimized: true
-topicFamily: null
-topicFamilyConfidence: null
+topicFamily: datascience
+topicFamilyConfidence: 0.9
 kind: project
 entryLayout: project
 showInProjects: true
@@ -102,4 +102,5 @@ python bar_code.py
 - Implement automated scheduling for regular data processing and order generation.
 - Enhance reporting features with more detailed analytics and visualization.
 - Improve barcode generation with error handling and support for multiple barcode formats.
+
 
